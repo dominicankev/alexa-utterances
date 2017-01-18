@@ -134,6 +134,19 @@ You may want to work with [Custom Slot Types](https://developer.amazon.com/appsa
 "your least favorite snack is {Fruit}"
 ```
 
+You can use a special syntax to leave a curly-braced slot name unparsed and make it optional. For example, if you have defined in your skill a `ROOM_NAME` with the values `Bedroom`, `Office` and `Living Room` for the slot `Room_Name`, you can keep `Room_Name` a curly-braced literal and optional as follows
+
+```javascript
+"change channel {to|} {-|ChannelNumber} {in +ROOM_NAME+|+ROOM_NAME+|}"
+=>
+"change channel to {ChannelNumber} in {ROOM_NAME}"
+"change channel {ChannelNumber} in {ROOM_NAME}"
+"change channel to {ChannelNumber} {ROOM_NAME}"
+"change channel {ChannelNumber} {ROOM_NAME}"
+"change channel to {ChannelNumber} "
+"change channel {ChannelNumber} "
+```
+
 ### Contributing
 
 See [CONTRIBUTING](CONTRIBUTING.md)

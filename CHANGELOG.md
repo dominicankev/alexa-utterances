@@ -1,6 +1,6 @@
-### Next
+### 0.2.2
 
-* Your contribution here.
+* Added ability to make slots optional by adding "+" before and after slot name (example: {+SLOTNAME+|}) - [@dominicankev] (https://github.com/dominicankev).
 
 ### 0.2.1
 
