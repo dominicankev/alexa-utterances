@@ -19,7 +19,7 @@ test('optional terms', function (t) {
   var template = 'do {it |}';
 
   var result = utterances(template, slots, dictionary);
-  t.deepEqual(result, [ 'do it ', 'do ' ]);
+  t.deepEqual(result, [ 'do it', 'do' ]);
   t.end();
 });
 
@@ -120,10 +120,10 @@ test('raw curly braces for custom slot types', function (t) {
     "your favorite fruit is {Fruit} in {ROOM_NAME}",
 	"my least favorite fruit is {Fruit} in {ROOM_NAME}",
     "your least favorite fruit is {Fruit} in {ROOM_NAME}",
-	"my favorite fruit is {Fruit} ",
-	"your favorite fruit is {Fruit} ",
-	"my least favorite fruit is {Fruit} ",
-	"your least favorite fruit is {Fruit} "
+	"my favorite fruit is {Fruit}",
+	"your favorite fruit is {Fruit}",
+	"my least favorite fruit is {Fruit}",
+	"your least favorite fruit is {Fruit}"
   ]);
   t.end();
 });
