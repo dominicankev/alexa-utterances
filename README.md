@@ -143,8 +143,8 @@ You can use a special syntax to leave a curly-braced slot name unparsed and make
 "change channel {ChannelNumber} in {ROOM_NAME}"
 "change channel to {ChannelNumber} {ROOM_NAME}"
 "change channel {ChannelNumber} {ROOM_NAME}"
-"change channel to {ChannelNumber} "
-"change channel {ChannelNumber} "
+"change channel to {ChannelNumber}"
+"change channel {ChannelNumber}"
 ```
 
 ### Contributing
