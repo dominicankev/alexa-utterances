@@ -159,7 +159,7 @@ function generateUtterances(str, slots, dictionary, exhaustiveUtterances) {
     utterances[idx] = utterances[idx].replace(/\{\-\|/g, "{");
     utterances[idx] = utterances[idx].replace(/\+(.*?)/, "{");
     utterances[idx] = utterances[idx].replace(/\+$/, "}");
-	utterances[idx] = utterances[idx].trim();
+    utterances[idx] = utterances[idx].trim();
   }
 
   return utterances;
