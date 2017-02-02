@@ -154,16 +154,22 @@ function generateUtterances(str, slots, dictionary, exhaustiveUtterances) {
     utterances = [str];
   }
 
-  // Convert all {-|Name} to {Name} to accomodate slot literals
+  // Convert all {-|Name} to {Name} and +Name+ to {Name} to accomodate slot literals and optional slot literals
   for (var idx in utterances) {
     utterances[idx] = utterances[idx].replace(/\{\-\|/g, "{");
-    utterances[idx] = utterances[idx].replace(/\+(.*?)/, "{");
-    utterances[idx] = utterances[idx].replace(/\+$/, "}");
+    var strArray = utterances[idx].split(" ");
+    var strTemp = "";
+    var strTemp2 = "";
+    utterances[idx] = strArray.forEach(function(item){
+      strTemp = item.replace(/\+(.*?)/, "{");
+      strTemp = strTemp.replace(/\+$/, "}");
+    strTemp2 += " " + strTemp;
+    });
+    utterances[idx] = strTemp2;
     utterances[idx] = utterances[idx].trim();
   }
-
+  
   return utterances;
 }
-
 
 module.exports = generateUtterances;

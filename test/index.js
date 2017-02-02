@@ -126,19 +126,27 @@ test('raw curly braces for custom slot types', function (t) {
 
 test('optional custom slot types', function (t) {
   var dictionary = {};
-  var slots = {"Artist": "CUSTOM_TYPE","ROOM_NAME": "AMAZON.Room"};
-  var template = "{my|your} {favorite|least favorite} fruit is {-|Fruit} {in +ROOM_NAME+|}";
+  var slots = {"FRUIT": "CUSTOM_TYPE","COLOR": "CUSTOM_TYPE","ROOM_NAME": "AMAZON.Room"};
+  var template = "{my|your} {favorite|least favorite} thing is {+FRUIT+|+COLOR+} {in +ROOM_NAME+|}";
 
   var result = utterances(template, slots, dictionary);
   t.deepEqual(result, [
-    "my favorite fruit is {Fruit} in {ROOM_NAME}",
-    "your favorite fruit is {Fruit} in {ROOM_NAME}",
-    "my least favorite fruit is {Fruit} in {ROOM_NAME}",
-    "your least favorite fruit is {Fruit} in {ROOM_NAME}",
-    "my favorite fruit is {Fruit}",
-    "your favorite fruit is {Fruit}",
-    "my least favorite fruit is {Fruit}",
-    "your least favorite fruit is {Fruit}"
+    "my favorite thing is {FRUIT} in {ROOM_NAME}",
+    "your favorite thing is {FRUIT} in {ROOM_NAME}",
+    "my least favorite thing is {FRUIT} in {ROOM_NAME}",
+    "your least favorite thing is {FRUIT} in {ROOM_NAME}",
+    "my favorite thing is {COLOR} in {ROOM_NAME}",
+    "your favorite thing is {COLOR} in {ROOM_NAME}",
+    "my least favorite thing is {COLOR} in {ROOM_NAME}",
+    "your least favorite thing is {COLOR} in {ROOM_NAME}",
+    "my favorite thing is {FRUIT}",
+    "your favorite thing is {FRUIT}",
+    "my least favorite thing is {FRUIT}",
+    "your least favorite thing is {FRUIT}",
+    "my favorite thing is {COLOR}",
+    "your favorite thing is {COLOR}",
+    "my least favorite thing is {COLOR}",
+    "your least favorite thing is {COLOR}"
   ]);
   t.end();
 });
