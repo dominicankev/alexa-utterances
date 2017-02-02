@@ -163,7 +163,7 @@ function generateUtterances(str, slots, dictionary, exhaustiveUtterances) {
     utterances[idx] = strArray.forEach(function(item){
       strTemp = item.replace(/\+(.*?)/, "{");
       strTemp = strTemp.replace(/\+$/, "}");
-    strTemp2 += " " + strTemp;
+      strTemp2 += " " + strTemp;
     });
     utterances[idx] = strTemp2;
     utterances[idx] = utterances[idx].trim();
